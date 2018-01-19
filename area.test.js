@@ -1,25 +1,25 @@
 const getArea = require('./area');
 
-var l = [1 , 2];
+var arrTest1 = [1 , 2];
 
 test('valida 1,2', () => {
-  expect(getArea(l)).toBe(2);
+  expect(getArea(arrTest1)).toBe(2);
 });
 
-l = [0 , 0];
+var arrTest2 = [0 , 0];
 test('valida 0, 0', () => {
-  expect(getArea(l)).toBe(0);
+  expect(getArea(arrTest2)).toBe(0);
 });
 
-l = [0 , 1];
+var arrTest3 = [0 , 1];
 test('valida 0, 1', () => {
-  expect(getArea(l)).toBe(0);
+  expect(getArea(arrTest3)).toBe(0);
 });
 
-l = [1 , -2];
+var arrTest4 = [1 , -2];
 
 test('invalida 1,-2', () => {
-  expect(getArea(l)).toBe(-1);
+  expect(getArea(arrTest4)).toBe(-1);
 });
 
 test('invalida 0,0', () => {
@@ -34,24 +34,46 @@ test('invalida "a","b"', () => {
   expect(getArea("a","b")).toBe(-1);
 });
 
-test('invalida 1', () => {
-  expect(getArea(1).toBe(-1);
+var vartest = 3;
+
+test('invalida varibile singola', () => {
+  expect(getArea(vartest)).toBe(-1);
 });
 
-test('invalida vuoto', () => {
-  expect(getArea()).toBe(-1);
-});
+var t = ["a", "b"];
 
 test('invalida non stringa non numeri', () => {
-  expect(getArea(t[2,3])).toBe(-1);
+  expect(getArea(t)).toBe(-1);
 });
 
-l = [0 , 0, 7];
+var arrTest5 = [0 , 2, 7];
 
 test('invalida 0, 0, 7', () => {
-  expect(getArea(l)).toBe(0);
+  expect(getArea(arrTest5)).toBe(0);
 });
 
+var arrTest6 = [0.1 , 2.7];
 
+test('invalida float', () => {
+  expect(getArea(arrTest5)).toBe(0);
+});
+
+var arrTest7 = [1 , 2.7];
+
+test('invalida 1 float', () => {
+  expect(getArea(arrTest5)).toBe(0);
+});
+
+var arrTest8 = ["a" , 2.7];
+
+test('invalida una string e un float', () => {
+  expect(getArea(arrTest5)).toBe(0);
+});
+
+var arrTest8 = ["3" , "2"];
+
+test('invalida stringhe con numeri', () => {
+  expect(getArea(arrTest5)).toBe(0);
+});
 
 
