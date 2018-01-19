@@ -1,5 +1,6 @@
 const getArea = require('./area');
 
+//TESTS
 var arrTest1 = [1 , 2];
 
 test('valida 1,2', () => {
