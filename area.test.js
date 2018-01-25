@@ -82,5 +82,13 @@ test('invalida oggetto', () => {
   expect(getArea(arrTest10)).toBe(-1);
 });
 
+var arrTest11 = [3];
 
+test('invalida array con un solo parametro', () => {
+  expect(getArea(arrTest11)).toBe(-1);
+});
+
+test('invalida zero parametri', () => {
+  expect(getArea()).toBe(-1);
+});
 
