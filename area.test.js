@@ -49,32 +49,38 @@ test('invalida non stringa non numeri', () => {
 
 var arrTest5 = [0 , 2, 7];
 
-test('invalida 0, 0, 7', () => {
+test('valida 0, 2, 7', () => {
   expect(getArea(arrTest5)).toBe(0);
 });
 
 var arrTest6 = [0.1 , 2.7];
 
 test('invalida float', () => {
-  expect(getArea(arrTest5)).toBe(0);
+  expect(getArea(arrTest6)).toBe(-1);
 });
 
 var arrTest7 = [1 , 2.7];
 
 test('invalida 1 float', () => {
-  expect(getArea(arrTest5)).toBe(0);
+  expect(getArea(arrTest7)).toBe(-1);
 });
 
 var arrTest8 = ["a" , 2.7];
 
 test('invalida una string e un float', () => {
-  expect(getArea(arrTest5)).toBe(0);
+  expect(getArea(arrTest8)).toBe(-1);
 });
 
-var arrTest8 = ["3" , "2"];
+var arrTest9 = ["3" , "2"];
 
 test('invalida stringhe con numeri', () => {
-  expect(getArea(arrTest5)).toBe(0);
+  expect(getArea(arrTest9)).toBe(-1);
 });
+
+var arrTest10 = {};
+test('invalida oggetto', () => {
+  expect(getArea(arrTest10)).toBe(-1);
+});
+
 
 
